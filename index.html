@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Check-In and Review Count for Restaurant Business</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Check-In and Review Count for Restaurant Business">
+  <meta name="author" content="Koh M.H.">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Check-In and Review Count for Restaurant Business</h1>
+    <h2>Capstone Project</h2>
+    <p>Koh M.H.<br/>Analyst</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Background of this analysis</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>With the wide adoption of social media, published data is now easily available to consumers. For each business, the awareness and popularity of the business may be represented by the number of check-in clocked. This may be even more so for restaurant business. Amongst many attributes of the restaurant business, number of review counts received by the restaurants may have implication on the number of check-in clocked. This is a summary of the analysis about how the number of review counts received were related to the number of check-in for restaurants using linear regression methods (single and multivariate).</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Data Preparation and Exploration</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The datasource for this analysis : &quot;check in&quot; and &quot;business&quot; files are from <a href="http://www.yelp.com/dataset_challenge">Yelp Database</a>. 
+Below is a summary on data preparation :</p>
+
+<ul>
+<li>check-in file - &#39;checkin_info&#39; data was transformed to total number of check-in (refer as &#39;sum&#39;).</li>
+<li>as at least 80% of business records had &#39;sum&#39; data &lt; 500 although the maximum of the full range was 14203. This analysis only focused on business records with sum &lt; 500. </li>
+<li>business file - for records with &#39;open&#39; = TRUE, the &#39;hours&#39; data was transformed to total number of business hours (refer as &#39;bizhrtotal&#39;).</li>
+<li>To smoothen out the spread of the &#39;stars&#39;, the records were transformed from 9 types of stars ratings to 3 rating levels (refer as &#39;rate&#39;) instead, namely &#39;H&#39;, &#39;M&#39; and &#39;L&#39;.</li>
+<li>Only business records with complete data (no &#39;NA&#39;) were considered for further analysis.</li>
+</ul>
+
+<p>Result of basic exploratory analysis : number of review counts received is positively related to the number of check-in for restaurants. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Methods/Results and Discussion</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Simple linear regression : to analyse relationship between check-in and review count.  </p>
+
+<p>Observations : an increase in review count would result in an increase of 1.73 number of check-in. 
+This model explained 52.66% of the variance (R squared=0.5266). With a p-value &lt;=0.05, we could reject the H0 and thus claim that there was a postive relationship between check-in and review count.</p>
+
+<p>Multivariate Step regression(backward) : to analyse possibility of confounding variables which might influence the relationship between check-in and review count.  </p>
+
+<p>Observations : an increase in review count would result in an increase of 1.62 number of check-in.
+This model explained 66.62% of the variance(R squared=0.6662).</p>
+
+<p>Validation through testing data sets and examination of the diagnosis plot showed results were supportive of the positive relationship between check-in and review count.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Conclusion</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The analysis showed that there was a positive relationship between review count and number of check-in for restaurant business. When there were more review counts received, there were more check-in clocked. Thus business owners who are interested to improve publicity of their restaurants can consider putting efforts in attracting and encouraging customers, especially those who have positive experiences when they visited the restaurants, to provide reviews for their restaurants.</p>
+
+<p>This is the end of the presentation.</p>
+
+<p>Thank you.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Background of this analysis'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Data Preparation and Exploration'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Methods/Results and Discussion'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Conclusion'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
